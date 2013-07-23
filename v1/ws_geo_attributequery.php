@@ -42,7 +42,7 @@ catch (Exception $e) {
 # Performs the query and returns XML or JSON gid,st_asgeojson(st_transform(the_geom,4617)) as geojson
 try {
   if($source=="" && $target==""){
-	$sql = "select ".$fields.",st_asgeojson(st_transform(the_geom,4617)) as geojson  from  ". $geotable;
+	$sql = "select ".$fields.",st_asgeojson(st_transform(the_geom,4617)) as geojson  from  ". $geotable." limit 10" ;
 	if (strlen(trim($parameters)) > 0) {$sql .= " where " . $parameters;}
 	$sql = sanitizeSQL($sql);
 	//echo $sql;
