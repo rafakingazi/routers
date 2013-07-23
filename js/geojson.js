@@ -32,7 +32,7 @@ marker2 = new L.marker(map1.getCenter());
 function getGeoJSON(srid,geotable,fields,source,target,hassource,parameters,format,limit,routing){
 $.ajax({
     type: "GET",
-    url: "/v1/ws_geo_attributequery.php",
+    url: "http://daladalaroutes.herokuapp.com/v1/ws_geo_attributequery.php",
     data: {
         "srid":srid,
         "geotable":geotable,
