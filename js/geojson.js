@@ -32,7 +32,7 @@ marker2 = new L.marker(map1.getCenter());
 function getGeoJSON(srid,geotable,fields,source,target,hassource,parameters,format,limit,routing){
 $.ajax({
     type: "GET",
-    url: "http://localhost/postgis_api/v1/ws_geo_attributequery.php",
+    url: "http://routes.zapto.org/postgis_api/v1/ws_geo_attributequery.php",
     data: {
         "srid":srid,
         "geotable":geotable,
