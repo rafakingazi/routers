@@ -40,6 +40,8 @@ demo {
 <div class="container">
 <div class="row-fluid" >
 <div class="span2">
+<div id='router'>
+</div>
 <div id='clocation'>
 </div>
 <div id='destination'>
@@ -58,14 +60,10 @@ demo {
 <script src="js/prettify.js" type="text/javascript"></script>
 <script src='js/jquery-1.8.1.min.js' ></script>
 <script src="js/lvector.js" type="text/javascript"></script>
-
-
-<script>
-/*
- $(document).ready(function() {
-$.ajax({
-    type: "GET",
-    url: "http://localhost/postgis_api/v1/ws_geo_attributequery.php",
+<script src="js/geojson.js" type="text/javascript"></script>
+    </body>
+</html>
+_api/v1/ws_geo_attributequery.php",
     data: {
         "srid": 4617,
         "distance": 20000,

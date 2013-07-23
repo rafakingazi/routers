@@ -42,7 +42,7 @@ catch (Exception $e) {
 # Performs the query and returns XML or JSON gid,st_asgeojson(st_transform(the_geom,4617)) as geojson
 try {
   if($source=="" && $target==""){
-	$sql = "select " . $fields . "   from  ". $geotable."  limit 10000";
+	$sql = "select ".$fields.",st_asgeojson(st_transform(the_geom,4617)) as geojson  from  ". $geotable;
 	if (strlen(trim($parameters)) > 0) {$sql .= " where " . $parameters;}
 	$sql = sanitizeSQL($sql);
 	//echo $sql;
@@ -61,7 +61,7 @@ try {
             join (select * from shortest_path('select gid as id, source::integer, target::integer, length::double precision as cost from newroads', 128, 315, false, false)) as route
             on newroads.gid = route.edge_id"*/
 
-    $sql = "select ".$fields." from  ".$geotable."
+    $sql = "select ".$fields." ,st_asgeojson(st_transform(the_geom,4617)) as geojson from  ".$geotable."
             join (select * from shortest_path('".$innerSql."', ".$source.", ".$target.", false, false)) as route
             on ".$geotable.".gid = route.edge_id";
 
