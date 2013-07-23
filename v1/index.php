@@ -11,7 +11,7 @@
  */
 
 # Includes
-echo "hellow people";
+
 require_once("../inc/error.inc.php");
 require_once("../inc/database.inc.php");
 require_once("../inc/security.inc.php");
