@@ -14,7 +14,7 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.css">
-         <link href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" rel="stylesheet">
+
          <style>
          .map {
     height: 100%;
@@ -35,18 +35,29 @@ demo {
     <body>
 
 <div class='header'>
-<h1>Routing Examples</h1>
+
 </div>
 <div class="container">
 <div class="row-fluid" >
 <div class="span2">
+<br/><br/>
+<div class="search">
+<p>Enter Source and Destination Bus Stop to start</p>
+<form >
+<input type="hidden" class="source_point" />
+<input type="hidden" class="destiny_point" />
+<input type="text" value="" class="span10 source_option" placeHolder="Source" style="margin: 0 auto;"  />
+<input type="text" value="" class="span10 destiny_option" placeHolder="destination" />
+<input type="submit" value="Find Route" class="btn find_route"  />
+</form>
+</div>
 <div id='router'>
 </div>
 <div id='clocation'>
 </div>
 <div id='destination'>
 </div>
-<p id='tester'></p>
+
 </div>
 <div class="span10  demo">
 <p>Dar-es-salaam Daladala Routing</p>
@@ -54,11 +65,17 @@ demo {
 
 </div>
 </div>
+<div class="row-fluid" >
+<div class="span10">
+<p id='tester' class="span11"></p>
 </div>
-
+</div>
+</div>
+<link href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" rel="stylesheet">
 <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"type="text/javascript"></script>
 <script src="js/prettify.js" type="text/javascript"></script>
 <script src='js/jquery-1.8.1.min.js' ></script>
+<script src="js/bootstrap-typeahead.js"></script>
 <script src="js/lvector.js" type="text/javascript"></script>
 <script src="js/geojson.js" type="text/javascript"></script>
     </body>
